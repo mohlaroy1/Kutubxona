@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Talabalar | Kutubxona</title>
+</head>
+<body>
+
+    <h1>Talabalar ro'yxati</h1>
+
+    <a href="/talaba_add/">
+        <button>+ Talaba qo'shish</button>
+    </a>
+
+    <a href="/">Bosh sahifa</a>
+
+    <hr>
+
+    <form>
+        <input type="text" name="search" placeholder="Ism orqali qidiring..."
+        {% if search %} value="{{ search }}" {% endif %}>
+        <button>Qidirish</button>
+    </form>
+
+    <hr>
+
+    {% for talaba in talabalar %}
+        <p>
+            {{ forloop.counter }}.
+
+            <a href="/talabalar/{{ talaba.id }}/">
+                {{ talaba.ism }}
+            </a>
+
+
+            <a href="/talabalar/{{ talaba.id }}/update/">
+                <button>Edit</button>
+            </a>
+
+
+            <a href="/talabalar/{{ talaba.id }}/delete_confirm/">
+                <button>O'chirish</button>
+            </a>
+        </p>
+    {% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ kitob.nomi }} | Kutubxona</title>
+</head>
+<body>
+<h1>
+    {{ kitob.nom }} ma'lumotlari
+    <a href="/kitoblar/{{ kitob.id }}/delete_confirm/">
+        <button>O'chirish</button>
+    </a>
+</h1>
+<hr>
+<p>Muallif: {{ kitob.muallif.ism }}</p>
+<p>Janr: {{ kitob.janr }}</p>
+<p>Sahifasi: {{ kitob.sahifa }} bet</p>
+
+</body>
+</html>

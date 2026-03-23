@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recordlar | Kutubxona</title>
+</head>
+<body>
+    <h1>Recordlar ro'yxati</h1>
+    <a href="/record_add/">
+        <button>+ Record qo'shish</button>
+    </a>
+    <a href="/">Bosh sahifa</a>
+    <hr>
+    {% for record in recordlar %}
+        <p>{{ forloop.counter }}.
+            <a href="/recordlar/{{ record.id }}/">{{ record.kitob.nom }}</a>
+            <a href="/recordlar/{{ record.id }}/update/">
+                <button>Edit</button>
+            </a>
+        </p>
+    {% endfor %}
+
+</body>
+</html>

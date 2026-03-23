@@ -1,0 +1,23 @@
+<form method="POST">
+    {% csrf_token %}
+
+    <select name="talaba">
+        {% for t in talabalar %}
+            <option value="{{ t.id }}">{{ t.ism }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="kitob">
+        {% for k in kitoblar %}
+            <option value="{{ k.id }}">{{ k.nom }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="kutubxonachi">
+        {% for k in kutubxonachilar %}
+            <option value="{{ k.id }}">{{ k.ism }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Qo‘shish</button>
+</form>

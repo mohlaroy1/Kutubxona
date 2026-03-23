@@ -1,0 +1,19 @@
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="nom" value="{{ kitob.nom }}">
+    <input type="text" name="janr" value="{{ kitob.janr }}">
+    <input type="number" name="sahifa" value="{{ kitob.sahifa }}">
+
+    <select name="muallif">
+        {% for muallif in mualliflar %}
+            <option value="{{ m.id }}"
+                {% if muallif.id == kitob.muallif.id %} selected {% endif %}
+            >
+                {{ muallif.ism }}
+            </option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Saqlash</button>
+</form>

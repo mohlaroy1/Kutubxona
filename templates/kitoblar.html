@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitoblar | Kutubxona</title>
+</head>
+<body>
+    <h1>Kitoblar ro'yxati</h1>
+    <a href="/kitob_add/">
+        <button>+ Kitob qo'shish</button>
+    </a>
+    <a href="/">Bosh sahifa</a>
+
+    <hr>
+    <form>
+        <input type="text" name="q" placeholder="Nomi bo'yicha qidiring..." {% if q %} value="{{ q }}" {% endif %}>
+        <button>Qidirish</button>
+        <br><br>
+        <select name="ordering">
+            <option value="nom" {% if ordering == 'nom' %} selected {% endif %} >Nom bo'yicha (a➡️z)</option>
+            <option value="-nom" {% if ordering == '-nom' %} selected {% endif %} >Nom bo'yicha (z➡️a)</option>
+            <option value="sahifa" {% if ordering == 'sahifa' %} selected {% endif %} >Sahifa bo'yicha (⬆️)</option>
+            <option value="-sahifa" {% if ordering == '-sahifa' %} selected {% endif %} >Sahifa bo'yicha (⬇️)</option>
+        </select>
+        <button>Go</button>
+    </form>
+    <hr>
+    {% for kitob in kitoblar %}
+        <p>
+            {{ forloop.counter }}.
+            <a href="/kitoblar/{{ kitob.id }}/">{{ kitob.nom }}</a>
+            <a href="/kitoblar/{{ kitob.id }}/update/">
+                <button>Edit</button>
+            </a>
+            <a href="/kitoblar/{{ kitob.id }}/delete_confirm/">
+                <button>O'chirish</button>
+            </a>
+
+        </p>
+    {% endfor %}
+
+</body>
+</html>

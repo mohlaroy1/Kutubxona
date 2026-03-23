@@ -1,0 +1,10 @@
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" value="{{ record.talaba.ism }}" disabled>
+    <input type="text" value="{{ record.kitob.nom }}" disabled>
+    <input type="text" value="{{ record.kutubxon.ism }}" disabled>
+
+    <input type="datetime-local" name="qaytargan_vaqt" value="{{ record.qaytargan_vaqt| date:'Y-m-d\\TH:i' }}">
+    <button type="submit">Saqlash</button>
+</form>

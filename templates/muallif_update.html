@@ -1,0 +1,12 @@
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="ism" value="{{ muallif.ism }}">
+
+    <select name="jins">
+        <option value="Erkak" {% if muallif.jins == "Erkak" %}selected{% endif %}>Erkak</option>
+        <option value="Ayol" {% if muallif.jins == "Ayol" %}selected{% endif %}>Ayol</option>
+    </select>
+
+    <button>Saqlash</button>
+</form>

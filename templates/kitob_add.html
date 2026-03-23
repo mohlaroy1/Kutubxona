@@ -1,0 +1,15 @@
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="nom" placeholder="Nom">
+    <input type="text" name="janr" placeholder="Janr">
+    <input type="number" name="sahifa" placeholder="Sahifa">
+
+    <select name="muallif">
+        {% for muallif in mualliflar %}
+            <option value="{{ muallif.id }}">{{ muallif.ism }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Qo‘shish</button>
+</form>

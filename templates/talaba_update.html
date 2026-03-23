@@ -1,0 +1,10 @@
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="ism" value="{{ talaba.ism }}" disabled>
+
+    <input type="text" name="guruh" value="{{ talaba.guruh }}">
+    <input type="number" name="kurs" value="{{ talaba.kurs }}">
+
+    <button type="submit">Saqlash</button>
+</form>
